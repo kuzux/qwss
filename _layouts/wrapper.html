@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+	<title>{{ page.title }} - {{ site.title }}</title>
+	<meta name="description" content={{site.description}}>
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}{% link _static/site.css %}">
+</head>
+<body>
+	<header class="top-navbar">
+		<a class="navbar-logo" href="{{ site.baseurl }}{% link index.md %}">
+			<img src="{{ site.baseurl }}{% link _static/logo.webp %}" alt="QTurkey Logo" />
+		</a>
+		<ul class="top-navbar-list">
+			<li>
+				{% if page.id == "event-about" %}
+				<p class="current-page">Etkinlik Hakkında</p>
+				{% else %}
+				<a href="{{ site.baseurl }}{% link index.md %}">Etkinlik Hakkında</a>
+				{% endif %}
+			</li>
+			<li>
+				{% if page.id == "event-program" %}
+				<p class="current-page">Etkinlik Yeri ve Programı</p>
+				{% else %}
+				<a href="{{ site.baseurl }}{% link event-program.md %}">Etkinlik Yeri ve Programı</a>
+				{% endif %}
+			</li>
+			<li>
+				{% if page.id == "event-instructors" %}
+				<p class="current-page">Eğitmenler</p>
+				{% else %}
+				<a href="{{ site.baseurl }}{% link event-instructors.md %}">Eğitmenler</a>
+				{% endif %}
+			</li>
+			<li>
+				{% if page.id == "event-sponsors" %}
+				<p class="current-page">Destekleyen Kuruluşlar</p>
+				{% else %}
+				<a href="{{ site.baseurl }}{% link event-sponsors.md %}">Destekleyen Kuruluşlar</a></li>
+				{% endif %}
+			<li>
+				{% if page.id == "event-contact" %}
+				<p class="current-page">Başvuru ve İletişim</p>
+				{% else %}
+				<a href="{{ site.baseurl }}{% link event-contact.md %}">Başvuru ve İletişim</a>
+				{% endif %}
+			</li>
+		</ul>
+	</header>
+	<article class="site-main">
+		{{ content }}
+	</article>
+</body>
+</html>
